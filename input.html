@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal AI Carbon Coach - Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate Your Carbon Footprint</h1>
+        <p>Enter your daily travel, energy usage, diet, and lifestyle to get a personalized carbon estimate.</p>
+        
+        <form method="POST" action="{{ url_for('input_page') }}">
+            <!-- Daily Travel -->
+            <label for="daily_travel">Daily Travel (km):</label>
+            <input type="number" step="0.1" id="daily_travel" name="daily_travel" required>
+
+            <!-- Transport Mode -->
+            <label for="transport_mode">Transport Mode:</label>
+            <select id="transport_mode" name="transport_mode" required>
+                <option value="car_petrol">Car - Petrol</option>
+                <option value="car_diesel">Car - Diesel</option>
+                <option value="car_electric">Car - Electric</option>
+                <option value="bus">Bus</option>
+                <option value="train">Train/Metro</option>
+                <option value="bike">Bike</option>
+                <option value="walk">Walking</option>
+            </select>
+
+            <!-- Energy Usage -->
+            <label for="energy_usage">Daily Energy Usage (kWh):</label>
+            <input type="number" step="0.1" id="energy_usage" name="energy_usage" required>
+
+            <!-- Energy Source -->
+            <label for="energy_source">Home Energy Source:</label>
+            <select id="energy_source" name="energy_source" required>
+                <option value="grid">Grid</option>
+                <option value="solar">Solar / Renewable</option>
+                <option value="hybrid">Hybrid</option>
+            </select>
+
+            <!-- Diet Type -->
+            <label for="diet_type">Diet Type:</label>
+            <select id="diet_type" name="diet_type" required>
+                <option value="omnivore">Omnivore</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="pescatarian">Pescatarian</option>
+            </select>
+
+            <!-- Lifestyle Habits -->
+            <label>Lifestyle Habits:</label>
+            <div>
+                <input type="checkbox" id="recycle" name="habit" value="recycle">
+                <label for="recycle">Recycles regularly</label><br>
+                <input type="checkbox" id="reusable_bags" name="habit" value="reusable_bags">
+                <label for="reusable_bags">Uses reusable bags</label><br>
+                <input type="checkbox" id="avoid_plastic" name="habit" value="avoid_plastic">
+                <label for="avoid_plastic">Avoids single-use plastics</label><br>
+                <input type="checkbox" id="compost" name="habit" value="compost">
+                <label for="compost">Composts organic waste</label>
+            </div>
+
+            <button type="submit">Calculate Carbon Footprint</button>
+        </form>
+    </div>
+</body>
+</html>
+

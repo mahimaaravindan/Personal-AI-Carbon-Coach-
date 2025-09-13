@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal AI Carbon Coach</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+    /* Body with background image */
+    body {
+        background: url('{{ url_for('static', filename="images/bg.jpg") }}') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+
+    /* Welcome container with semi-transparent background */
+    .welcome-container {
+        background: rgba(255, 255, 255, 0.85); /* white with 85% opacity */
+        padding: 40px 50px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+        max-width: 600px;
+        width: 90%;
+    }
+
+    /* Headings and text */
+    h1 {
+        margin-bottom: 15px;
+        font-size: 2rem;
+        color: #2c3e50;
+    }
+
+    p {
+        margin-bottom: 25px;
+        font-size: 1rem;
+        color: #555;
+    }
+
+    /* Button */
+    .btn {
+        display: inline-block;
+        background-color: #3498db;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #2980b9;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        .welcome-container {
+            padding: 20px 25px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome to Personal AI Carbon Coach</h1>
+        <p>Track your carbon footprint and make smarter choices!</p>
+        <a href="/input" class="btn">Get Started</a>
+    </div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

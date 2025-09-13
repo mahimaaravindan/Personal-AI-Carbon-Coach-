@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Your Estimated Carbon Emission</h2>
+    <p><strong>{{ carbon }} kg CO2 per day</strong></p>
+
+    <hr>
+
+    <h3>How It Was Calculated</h3>
+    <p>
+        Your daily carbon footprint is estimated based on the information you provided:
+    </p>
+    <ul>
+        <li><strong>Daily Travel:</strong> Your daily travel distance and choice of transportation (car, bus, bike, etc.) contribute to CO₂ emissions.</li>
+        <li><strong>Energy Usage:</strong> The electricity or energy you consume at home, measured in kWh, adds to your carbon footprint.</li>
+        <li><strong>Diet Type:</strong> Food choices have a significant impact. For example, omnivorous diets typically have higher CO₂ emissions compared to vegetarian or vegan diets.</li>
+    </ul>
+
+    <h3>Insights</h3>
+    <p>
+        Based on your estimated carbon emission:
+    </p>
+    {% if carbon < 5 %}
+        <p class="good">✅ Great! Your daily carbon footprint is low. Keep up these sustainable habits.</p>
+    {% elif carbon < 10 %}
+        <p class="moderate">⚠️ Moderate. Your carbon footprint is average. Consider reducing car usage, conserving energy, or adopting a plant-based diet to improve sustainability.</p>
+    {% else %}
+        <p class="high">❌ High. Your daily carbon emission is above average. Try eco-friendly transportation, energy-saving practices, and a more plant-based diet to reduce your impact.</p>
+    {% endif %}
+
+    <a href="/result" class="btn">View Detailed Graphs</a>
+    <a href="/input" class="btn btn-secondary">Update Your Inputs</a>
+</div>
+</body>
+</html>
