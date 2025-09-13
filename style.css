@@ -1,0 +1,102 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    background: #f5f7fa; /* subtle light grey */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #2c3e50;
+}
+
+/* Paragraph */
+p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Labels */
+label {
+    display: block;
+    text-align: left;
+    margin: 12px 0 5px;
+    font-weight: 600;
+}
+
+/* Inputs & Selects */
+input[type="number"], select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Submit Button */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Small animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+}
